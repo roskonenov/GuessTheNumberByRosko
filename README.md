@@ -35,6 +35,6 @@
 **#screenshot**
 ![image](https://github.com/roskonenov/GuessTheNumberByRosko/assets/133804876/4da6a7e2-965e-49a7-bcb9-a6b2fbe1816d)
 
-#Source code link: [view code](https://github.com/roskonenov/GuessTheNumberByRosko/blob/master/src/GuessTheNumberByRosko.java)
+#Source code link: [view code](src/GuessTheNumberByRosko.java)
 
 
