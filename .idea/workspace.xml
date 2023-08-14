@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c0cee3b6-6845-45e1-b63a-bd8f913ce26a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GuessTheNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuessTheNumberByRosko.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GuessTheNumberByRosko.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuessTheNumberByRosko.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,11 +76,24 @@
       <updated>1691318030954</updated>
       <workItem from="1691318031965" duration="14086000" />
       <workItem from="1691342711249" duration="1933000" />
-      <workItem from="1691505428821" duration="637000" />
+      <workItem from="1691505428821" duration="1237000" />
+      <workItem from="1691513374466" duration="592000" />
+      <workItem from="1692024836761" duration="4159000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GuessTheNumberByRosko.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -11,11 +11,29 @@ public class GuessTheNumberByRosko {
         int level = 1;
         int bound = 100;
         String anotherGame = "y";
+        String difficulty = "";
+        int trys = 6;
 
         do {
+            if (difficulty.isEmpty()) {
+                System.out.println(ANSI_GREEN + "Choose difficulty level:\n(E)asy or (H)ard" + ANSI_RESET);
+                difficulty = scanner.nextLine();
+
+                if (!difficulty.equalsIgnoreCase("H") && !difficulty.equalsIgnoreCase("E")) {
+                    System.out.println(ANSI_RED + "Try again." + ANSI_RESET);
+                    difficulty = "";
+                    continue;
+                }
+            }
+
             System.out.println(ANSI_GREEN + "Level " + level + ANSI_RESET);
             randomNumber = random.nextInt(bound) + 1;
             System.out.printf(ANSI_BLUE + "Guess the number (1/%d)\n" + ANSI_RESET, bound);
+
+            if (difficulty.equalsIgnoreCase("h")) {
+                System.out.printf(ANSI_YELLOW + "You have %d trys!\n" + ANSI_RESET,
+                        trys);
+            }
             String playersNumber = scanner.nextLine();
 
             if (!inputInOrder(playersNumber, bound)) {
@@ -23,7 +41,21 @@ public class GuessTheNumberByRosko {
             } else {
 
                 while (!numberGuessed(playersNumber, randomNumber)) {
-                    System.out.println(ANSI_RED + "Try again." + ANSI_RESET);
+
+                    if (trys > 1) {
+                        System.out.println(ANSI_RED + "Try again." + ANSI_RESET);
+                    }
+                    if (difficulty.equalsIgnoreCase("h")) {
+                        trys--;
+                        
+                        if (trys == 0) {
+                            System.out.println(ANSI_CYAN + "You failed!\nGame over!" + ANSI_RESET);
+                            level = 5;
+                            break;
+                        }
+                        System.out.printf(ANSI_YELLOW + "You have %d try%s left!\n" + ANSI_RESET,
+                                trys, (trys > 1) ? "s" : "");
+                    }
                     playersNumber = scanner.nextLine();
 
                     while (!inputInOrder(playersNumber, bound)) {
@@ -38,22 +70,28 @@ public class GuessTheNumberByRosko {
                 switch (level) {
                     case 2:
                         bound = 200;
+                        trys = 5;
                         break;
                     case 3:
                         bound = 300;
+                        trys = 4;
                         break;
                     case 4:
                         bound = 500;
+                        trys = 4;
                         break;
                     case 5:
                         bound = 1000;
+                        trys = 3;
                         break;
                 }
                 continue;
             }
 
+            trys = 6;
             level = 1;
             bound = 100;
+            difficulty = "";
             System.out.println(ANSI_YELLOW + "Would you like another game? Y/N" + ANSI_RESET);
             anotherGame = scanner.nextLine();
 
